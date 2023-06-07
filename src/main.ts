@@ -12,12 +12,20 @@ WA.onInit().then(() => {
     console.log('Player tags: ',WA.player.tags)
 
     WA.room.area.onEnter('indice1').subscribe(() => {
-        const today = new Date();
-        const time = today.getHours() + ":" + today.getMinutes();
+        // const today = new Date();
+        // const time = today.getHours() + ":" + today.getMinutes();
         currentPopup = WA.ui.openPopup("indice1Popup", "C'est l'indice 1", []);
     })
 
     WA.room.area.onLeave('indice1').subscribe(closePopup)
+
+    WA.room.area.onEnter('indice2').subscribe(() => {
+        // const today = new Date();
+        // const time = today.getHours() + ":" + today.getMinutes();
+        currentPopup = WA.ui.openPopup("indice2Popup", "C'est l'indice 2", []);
+    })
+
+    WA.room.area.onLeave('indice2').subscribe(closePopup)
 
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
